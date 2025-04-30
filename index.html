@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OrderInstall – Powering the Last Mile of Your Operations</title>
+  <meta name="description" content="OrderInstall is a SaaS platform for managing field-based workflows, inventory, and subcontractor networks. Streamline your operations and scale with confidence." />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script defer>
+    // Rotating headlines logic
+    document.addEventListener('DOMContentLoaded', function() {
+      const headlines = [
+        'Powering the Last Mile of Your Operations',
+        'Order placed. Task assigned. Gear shipped. Job done.',
+        'Field Service, Simplified. Results Delivered.',
+        'From Order to Execution—All in One Place.'
+      ];
+      let idx = 0;
+      const el = document.getElementById('rotating-headline');
+      setInterval(() => {
+        idx = (idx + 1) % headlines.length;
+        el.textContent = headlines[idx];
+      }, 3200);
+    });
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-900 antialiased">
+  <!-- Hero Section -->
+  <header class="relative bg-gradient-to-br from-blue-600 to-indigo-700 text-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 py-16 md:py-20 flex flex-col md:flex-row justify-between items-start gap-10 md:gap-8">
+      <div class="flex-1 z-10 w-full md:w-1/2 flex flex-col justify-center items-start">
+        <h1 class="text-4xl sm:text-5xl font-extrabold mb-4 text-left">
+          <span id="rotating-headline">Powering the Last Mile of Your Operations</span>
+        </h1>
+        <p class="text-lg sm:text-xl mb-8 max-w-xl text-left">
+          OrderInstall is the all-in-one SaaS platform for managing field-based product and service orders—streamlining job creation, logistics, subcontractor scheduling, and automated billing.
+        </p>
+        <a href="#signup" class="inline-block bg-white text-blue-700 font-semibold px-8 py-3 rounded shadow hover:bg-blue-50 transition">Request a Callback</a>
+      </div>
+      <div class="flex-1 flex flex-col items-end w-full md:w-auto max-w-md z-10 mt-10 md:mt-0">
+        <!-- Login Form Card -->
+        <form class="bg-white bg-opacity-90 rounded-2xl shadow-lg p-8 w-full max-w-md text-gray-900 space-y-6" style="backdrop-filter: blur(2px);">
+          <h2 class="text-2xl font-semibold mb-2 text-center text-gray-800">Sign In</h2>
+          <div>
+            <label for="login-username" class="block text-sm font-medium mb-1">Username</label>
+            <div class="relative">
+              <input type="text" id="login-username" name="username" placeholder="Your Username" class="w-full border border-gray-300 rounded px-3 py-2 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+              <span class="absolute inset-y-0 right-3 flex items-center text-gray-400">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5.121 17.804A13.937 13.937 0 0 1 12 15c2.5 0 4.847.655 6.879 1.804M15 11a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg>
+              </span>
+            </div>
+          </div>
+          <div>
+            <label for="login-password" class="block text-sm font-medium mb-1">Password</label>
+            <div class="relative">
+              <input type="password" id="login-password" name="password" placeholder="Your Password" class="w-full border border-gray-300 rounded px-3 py-2 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+              <span class="absolute inset-y-0 right-3 flex items-center text-gray-400">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 17a5 5 0 0 0 5-5V9a5 5 0 0 0-10 0v3a5 5 0 0 0 5 5Z"/></svg>
+              </span>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <label class="flex items-center text-sm">
+              <input type="checkbox" class="form-checkbox rounded text-blue-600 mr-2" />
+              Remember Me?
+            </label>
+            <a href="#" class="text-blue-600 text-sm hover:underline">Forgot Password?</a>
+          </div>
+          <button type="submit" class="w-full bg-blue-700 text-white font-semibold py-2 rounded hover:bg-blue-800 transition">Sign In</button>
+        </form>
+      </div>
+      <div class="flex-1 flex justify-center z-0">
+        <!-- AI IMAGE DESCRIPTION: Hero Visual -->
+        <!-- Create a modern, stylized illustration showing a diverse team of field technicians (men and women, various ethnicities) in branded vests, working with digital tablets and tools, with delivery vans and cityscape in the background. Overlay subtle digital UI elements (maps, checklists, notifications) to suggest technology and coordination. The mood is energetic, professional, and optimistic. -->
+        <img src="https://placehold.co/400x400?text=Hero+Image" alt="Illustration of diverse field technicians using digital tools, with vans and cityscape, representing modern field service coordination" class="rounded-xl shadow-2xl w-full max-w-md object-cover border-4 border-white/30" />
+      </div>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/30 to-transparent pointer-events-none"></div>
+  </header>
+
+  <!-- What is OrderInstall? -->
+  <section class="max-w-5xl mx-auto px-6 py-16" id="about">
+    <h2 class="text-3xl font-bold mb-4 text-center">What is OrderInstall?</h2>
+    <p class="text-lg text-center mb-10 max-w-2xl mx-auto">
+      OrderInstall is a flexible SaaS platform designed to streamline how businesses manage product and service orders that require field-based fulfilment by subcontractors. Everything from order creation and logistics to field execution and invoicing—centralised in one place.
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+      <div class="flex flex-col items-center">
+        <!-- AI IMAGE DESCRIPTION: Centralised Workflow Icon -->
+        <!-- Create a simple, modern icon showing a dashboard with interconnected nodes or workflow arrows, representing centralised management. Use blue as the accent color. -->
+        <img src="https://placehold.co/64x64?text=Icon" alt="Icon of a dashboard with interconnected workflow nodes, representing centralised management" class="mb-3" />
+        <h3 class="font-semibold text-lg mb-1">Centralised Workflow</h3>
+        <p class="text-center text-gray-600">Manage jobs, logistics, and subcontractors in one intuitive dashboard.</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <!-- AI IMAGE DESCRIPTION: Inventory Management Icon -->
+        <!-- Create a modern icon of stacked boxes with a barcode and a location pin, representing inventory and logistics. Use green as the accent color. -->
+        <img src="https://placehold.co/64x64?text=Icon" alt="Icon of stacked boxes with barcode and location pin, representing inventory management" class="mb-3" />
+        <h3 class="font-semibold text-lg mb-1">Inventory Management</h3>
+        <p class="text-center text-gray-600">Track, ship, and manage hardware across multiple locations with ease.</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <!-- AI IMAGE DESCRIPTION: Smart Job Assignment Icon -->
+        <!-- Create a modern icon of a map with a highlighted route and a checkmark, representing smart job assignment and completion. Use yellow as the accent color. -->
+        <img src="https://placehold.co/64x64?text=Icon" alt="Icon of a map with a route and checkmark, representing smart job assignment" class="mb-3" />
+        <h3 class="font-semibold text-lg mb-1">Smart Job Assignment</h3>
+        <p class="text-center text-gray-600">Automate job allocation and match work to the right installer, every time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Features Section -->
+  <section class="bg-white py-16" id="features">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-10 text-center">Core Features</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-gray-50 rounded-lg shadow p-6 flex flex-col items-center">
+          <!-- AI IMAGE DESCRIPTION: Order Lifecycle Management Card -->
+          <!-- Create a card illustration showing a clipboard with checklists, a calendar, and a delivery box, representing order lifecycle management. Use blue as the accent color. -->
+          <img src="https://placehold.co/80x80?text=Feature" alt="Clipboard, checklist, calendar, and delivery box representing order lifecycle management" class="mb-3" />
+          <h3 class="font-semibold mb-2">Order Lifecycle Management</h3>
+          <p class="text-center text-gray-600">Create, assign, and track orders for on-site services and installations.</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg shadow p-6 flex flex-col items-center">
+          <!-- AI IMAGE DESCRIPTION: Inventory Management System Card -->
+          <!-- Create a card illustration of a warehouse with shelves, boxes, and a digital inventory screen, representing inventory management. Use green as the accent color. -->
+          <img src="https://placehold.co/80x80?text=Feature" alt="Warehouse shelves, boxes, and digital inventory screen representing inventory management" class="mb-3" />
+          <h3 class="font-semibold mb-2">Inventory Management System</h3>
+          <p class="text-center text-gray-600">Track hardware, manage shipping, and streamline logistics workflows.</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg shadow p-6 flex flex-col items-center">
+          <!-- AI IMAGE DESCRIPTION: Subcontractor Scheduling & Smart Matching Card -->
+          <!-- Create a card illustration of a calendar, a map with pins, and a group of installers, representing scheduling and smart matching. Use yellow as the accent color. -->
+          <img src="https://placehold.co/80x80?text=Feature" alt="Calendar, map with pins, and group of installers representing scheduling and smart matching" class="mb-3" />
+          <h3 class="font-semibold mb-2">Subcontractor Scheduling & Smart Matching</h3>
+          <p class="text-center text-gray-600">Automate job allocation based on geography, skills, and availability.</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg shadow p-6 flex flex-col items-center">
+          <!-- AI IMAGE DESCRIPTION: Real-time Job Tracking Card -->
+          <!-- Create a card illustration of a smartphone with a live map, progress bar, and notification icons, representing real-time job tracking. Use indigo as the accent color. -->
+          <img src="https://placehold.co/80x80?text=Feature" alt="Smartphone with live map, progress bar, and notifications representing real-time job tracking" class="mb-3" />
+          <h3 class="font-semibold mb-2">Real-time Job Tracking</h3>
+          <p class="text-center text-gray-600">Monitor job progress, capture proof, and alert stakeholders instantly.</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg shadow p-6 flex flex-col items-center">
+          <!-- AI IMAGE DESCRIPTION: Automatic Invoicing Card -->
+          <!-- Create a card illustration of an invoice document, a dollar sign, and a digital payment confirmation, representing automatic invoicing. Use pink as the accent color. -->
+          <img src="https://placehold.co/80x80?text=Feature" alt="Invoice document, dollar sign, and payment confirmation representing automatic invoicing" class="mb-3" />
+          <h3 class="font-semibold mb-2">Automatic Invoicing</h3>
+          <p class="text-center text-gray-600">Generate and manage invoices automatically between all parties.</p>
+        </div>
+        <div class="bg-gray-50 rounded-lg shadow p-6 flex flex-col items-center">
+          <!-- AI IMAGE DESCRIPTION: Access to Skilled Installer Network Card -->
+          <!-- Create a card illustration of a network of installer avatars connected by lines, with a badge or checkmark, representing a verified installer network. Use teal as the accent color. -->
+          <img src="https://placehold.co/80x80?text=Feature" alt="Network of installer avatars with badge representing verified installer network" class="mb-3" />
+          <h3 class="font-semibold mb-2">Access to Skilled Installer Network</h3>
+          <p class="text-center text-gray-600">Tap into a growing network of verified, ready-to-go installers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who It's For -->
+  <section class="max-w-6xl mx-auto px-6 py-16" id="industries">
+    <h2 class="text-3xl font-bold mb-8 text-center">Who It's For</h2>
+    <div class="flex flex-wrap justify-center gap-8 mb-8">
+      <div class="flex flex-col items-center">
+        <!-- AI IMAGE DESCRIPTION: Fleet/Telematics Icon -->
+        <!-- Create a simple icon of a delivery van with a GPS pin and digital dashboard, representing fleet/telematics. Use blue as the accent color. -->
+        <img src="https://placehold.co/48x48?text=Icon" alt="Icon of delivery van with GPS pin and dashboard, representing fleet/telematics" class="mb-2" />
+        <span class="font-medium">Fleet/Telematics</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <!-- AI IMAGE DESCRIPTION: EV/Solar Icon -->
+        <!-- Create a simple icon of a solar panel and EV charger, with a sun and electric bolt, representing EV/solar. Use yellow as the accent color. -->
+        <img src="https://placehold.co/48x48?text=Icon" alt="Icon of solar panel, EV charger, sun, and electric bolt, representing EV/solar" class="mb-2" />
+        <span class="font-medium">EV/Solar</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <!-- AI IMAGE DESCRIPTION: IoT Icon -->
+        <!-- Create a simple icon of a connected device (like a smart sensor) with wireless signals, representing IoT. Use green as the accent color. -->
+        <img src="https://placehold.co/48x48?text=Icon" alt="Icon of smart sensor with wireless signals, representing IoT" class="mb-2" />
+        <span class="font-medium">IoT</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <!-- AI IMAGE DESCRIPTION: Commercial Equipment Icon -->
+        <!-- Create a simple icon of a toolbox and gears, representing commercial equipment. Use gray as the accent color. -->
+        <img src="https://placehold.co/48x48?text=Icon" alt="Icon of toolbox and gears, representing commercial equipment" class="mb-2" />
+        <span class="font-medium">Commercial Equipment</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <!-- AI IMAGE DESCRIPTION: Home & Appliance Icon -->
+        <!-- Create a simple icon of a washing machine and a house, representing home & appliance. Use teal as the accent color. -->
+        <img src="https://placehold.co/48x48?text=Icon" alt="Icon of washing machine and house, representing home & appliance" class="mb-2" />
+        <span class="font-medium">Home & Appliance</span>
+      </div>
+    </div>
+    <p class="text-center text-gray-700 max-w-2xl mx-auto">
+      OrderInstall is built for operations managers, product leads, and tech directors at companies coordinating field-based work—plus independent subcontractors seeking quality jobs and fast payment.
+    </p>
+  </section>
+
+  <!-- Subcontractor Angle -->
+  <section class="bg-blue-50 py-10 px-6" id="subcontractors">
+    <div class="max-w-3xl mx-auto flex flex-col md:flex-row items-center gap-6">
+      <div class="flex-1">
+        <h3 class="text-2xl font-bold mb-2 text-blue-800">Are you a technician or installer?</h3>
+        <p class="text-blue-900 mb-2">Get jobs, skip admin, and get paid fast. OrderInstall connects skilled subcontractors with verified work—no paperwork, no chasing payments.</p>
+      </div>
+      <!-- AI IMAGE DESCRIPTION: Subcontractor Callout -->
+      <!-- Create an illustration of a happy technician holding a digital tablet, with a completed checklist and a payment notification on screen. The background shows a van and tools. The mood is positive and professional. -->
+      <img src="https://placehold.co/120x120?text=Subcontractor" alt="Illustration of a happy technician with tablet, checklist, payment notification, van and tools" class="rounded shadow" />
+      <a href="#signup" class="bg-blue-700 text-white font-semibold px-6 py-3 rounded shadow hover:bg-blue-800 transition">Join as a Subcontractor</a>
+    </div>
+  </section>
+
+  <!-- Testimonial / Quote -->
+  <section class="max-w-3xl mx-auto px-6 py-16" id="testimonial">
+    <blockquote class="bg-white rounded-lg shadow p-8 text-center">
+      <!-- AI IMAGE DESCRIPTION: Testimonial Portrait -->
+      <!-- Create a circular portrait illustration of a smiling business professional (mid-30s, short brown hair, business casual), with a subtle background of digital maps and checklists. -->
+      <img src="https://placehold.co/64x64?text=Portrait" alt="Portrait of smiling business professional with digital maps and checklists in background" class="mx-auto mb-4 rounded-full" />
+      <p class="text-xl italic mb-4">"OrderInstall transformed our field operations—jobs get done faster, and our team finally has full visibility from order to completion."</p>
+      <footer class="text-gray-600">— Alex R., Operations Director, FleetTech Solutions</footer>
+    </blockquote>
+  </section>
+
+  <!-- Call to Action / Signup Form -->
+  <section class="bg-white py-16 px-6" id="signup">
+    <div class="max-w-lg mx-auto">
+      <h2 class="text-2xl font-bold mb-6 text-center">Let's Talk</h2>
+      <form class="space-y-5 bg-gray-50 rounded-lg shadow p-8" name="lead-capture" autocomplete="on" onsubmit="event.preventDefault(); document.getElementById('form-success').classList.remove('hidden'); this.reset();">
+        <div>
+          <label for="name" class="block font-medium mb-1">Name</label>
+          <input type="text" id="name" name="name" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+        <div>
+          <label for="email" class="block font-medium mb-1">Email</label>
+          <input type="email" id="email" name="email" required class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+        <div>
+          <label for="company" class="block font-medium mb-1">Company</label>
+          <input type="text" id="company" name="company" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+        <div>
+          <label for="role" class="block font-medium mb-1">Role</label>
+          <input type="text" id="role" name="role" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+        <div>
+          <label for="message" class="block font-medium mb-1">Message <span class="text-gray-400">(optional)</span></label>
+          <textarea id="message" name="message" rows="3" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-blue-700 text-white font-semibold py-3 rounded hover:bg-blue-800 transition">Request More Info</button>
+        <div id="form-success" class="hidden text-green-600 text-center mt-4">Thank you! We'll be in touch soon.</div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-200 py-8 px-6 mt-10">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="text-lg font-bold tracking-wide">OrderInstall</div>
+      <div class="flex gap-6 items-center">
+        <a href="#" class="hover:underline">Privacy Policy</a>
+        <span class="hidden md:inline">|</span>
+        <a href="mailto:info@orderinstall.com" class="hover:underline">info@orderinstall.com</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html> 
