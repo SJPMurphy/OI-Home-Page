@@ -205,6 +205,36 @@
     .pulse-btn {
       animation: pulse 2s infinite;
     }
+
+    /* Stats icon animations */
+    @keyframes bounceIn {
+      0% { transform: scale(0.3); opacity: 0; }
+      50% { transform: scale(1.05); opacity: 1; }
+      70% { transform: scale(0.9); }
+      100% { transform: scale(1); }
+    }
+
+    .stats-icon {
+      visibility: hidden;
+    }
+
+    .stats-icon.animate {
+      visibility: visible;
+      animation: bounceIn 0.8s ease forwards;
+    }
+
+    /* Ensure icons don't flash on load */
+    .stats-icon svg {
+      opacity: 0;
+      transform: scale(0.3);
+      will-change: transform, opacity;
+    }
+
+    .stats-icon.animate svg {
+      opacity: 1;
+      transform: scale(1);
+      transition: opacity 0.3s ease, transform 0.8s cubic-bezier(0.18, 1.25, 0.4, 1);
+    }
   </style>
 </head>
 <body class="bg-white text-gray-900 antialiased">
@@ -514,18 +544,38 @@
       </div>
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 scroll-reveal">
         <div class="bg-gray-50 rounded-2xl p-8 text-center">
+          <div class="stats-icon mb-4">
+            <svg class="w-12 h-12 mx-auto text-indigo-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+            </svg>
+          </div>
           <span id="counter1" class="text-5xl font-bold text-indigo-600">0</span><span class="text-5xl font-bold text-indigo-600">+</span>
           <p class="text-gray-700 font-medium mt-2">Field Orders Processed</p>
         </div>
         <div class="bg-gray-50 rounded-2xl p-8 text-center">
+          <div class="stats-icon mb-4">
+            <svg class="w-12 h-12 mx-auto text-indigo-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
           <span id="counter2" class="text-5xl font-bold text-indigo-600">0</span><span class="text-5xl font-bold text-indigo-600">%</span>
           <p class="text-gray-700 font-medium mt-2">Average Time Saved</p>
         </div>
         <div class="bg-gray-50 rounded-2xl p-8 text-center">
+          <div class="stats-icon mb-4">
+            <svg class="w-12 h-12 mx-auto text-indigo-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
           <span id="counter3" class="text-5xl font-bold text-indigo-600">0</span><span class="text-5xl font-bold text-indigo-600">+</span>
           <p class="text-gray-700 font-medium mt-2">Verified Installers</p>
         </div>
         <div class="bg-gray-50 rounded-2xl p-8 text-center">
+          <div class="stats-icon mb-4">
+            <svg class="w-12 h-12 mx-auto text-indigo-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
           <span id="counter4" class="text-5xl font-bold text-indigo-600">0</span>
           <p class="text-gray-700 font-medium mt-2">Countries Served</p>
         </div>
@@ -653,6 +703,7 @@
     // Counter animation script
     function animateCounter(id, target, duration) {
       const element = document.getElementById(id);
+      const icon = element.closest('.bg-gray-50').querySelector('.stats-icon');
       let startTime = null;
       const startValue = 0;
       
@@ -669,10 +720,12 @@
       }
       
       if (isElementInViewport(element)) {
+        icon.classList.add('animate');
         window.requestAnimationFrame(updateCounter);
       } else {
         const observer = new IntersectionObserver((entries) => {
           if (entries[0].isIntersecting) {
+            icon.classList.add('animate');
             window.requestAnimationFrame(updateCounter);
             observer.disconnect();
           }
