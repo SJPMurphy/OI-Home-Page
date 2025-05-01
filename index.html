@@ -56,12 +56,20 @@
     details > summary:hover {
       background-color: #f5f5f5;
     }
+    /* Add new CSS for nav menu */
+    .nav-menu {
+      transition: opacity 0.3s ease;
+    }
+    .nav-menu.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body class="bg-white text-gray-900 antialiased">
   <!-- Installer Lookup Button (desktop) -->
   <div class="relative w-full">
-    <a href="#" class="hidden md:flex absolute top-6 right-6 z-50 items-center gap-2 bg-white text-indigo-600 font-semibold px-5 py-2 rounded-full shadow-lg transition focus:outline-none focus:ring-2 focus:ring-indigo-400 hover:shadow-xl">
+    <a href="#" id="installer-lookup-btn" class="hidden md:flex absolute top-6 right-6 z-20 items-center gap-2 bg-white text-indigo-600 font-semibold px-5 py-2 rounded-full shadow-lg transition focus:outline-none focus:ring-2 focus:ring-indigo-400 hover:shadow-xl">
       <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       Installer Lookup
     </a>
@@ -70,6 +78,23 @@
   <!-- Hero Section -->
   <header class="relative bg-gradient-custom text-white overflow-hidden">
     <div class="absolute inset-0 bg-black opacity-10"></div>
+    <!-- Navigation Bar -->
+    <nav class="absolute top-0 left-0 right-0 z-30">
+      <div class="max-w-7xl mx-auto px-4 py-6 flex items-center">
+        <!-- Logo -->
+        <div class="flex-shrink-0 mr-12 lg:mr-24">
+          <img src="./images/order-install-logo_white.png" alt="OrderInstall Logo" class="w-60 md:w-64 h-auto" />
+        </div>
+        <!-- Navigation Links -->
+        <div id="nav-menu" class="nav-menu hidden md:flex items-center space-x-8 text-white mr-64 ml-auto">
+          <a href="#features" class="hover:text-white/80 transition font-medium">Features</a>
+          <a href="#industries" class="hover:text-white/80 transition font-medium">Industries</a>
+          <a href="#testimonial" class="hover:text-white/80 transition font-medium">Testimonials</a>
+          <a href="#faq" onclick="document.querySelector('#faq details').open = true" class="hover:text-white/80 transition font-medium">FAQ</a>
+          <a href="#about" class="hover:text-white/80 transition font-medium">About</a>
+        </div>
+      </div>
+    </nav>
     <div class="w-full min-h-screen flex items-center px-4 py-12">
       <div class="max-w-7xl mx-auto w-full">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
@@ -493,6 +518,46 @@
     window.addEventListener('load', function() {
       setTimeout(typeWriter, 1000);
     });
+
+    // FAQ Accordion Enhancement
+    document.querySelectorAll('details').forEach(details => {
+      details.addEventListener('toggle', function() {
+        if (this.open) {
+          const content = this.querySelector('div');
+          content.style.maxHeight = content.scrollHeight + 'px';
+        } else {
+          const content = this.querySelector('div');
+          content.style.maxHeight = '0';
+        }
+      });
+    });
+
+    // Add new JavaScript for nav menu visibility
+    function checkNavMenuVisibility() {
+      const navMenu = document.getElementById('nav-menu');
+      const installerBtn = document.getElementById('installer-lookup-btn');
+      const nav = document.querySelector('nav');
+      
+      if (!navMenu || !installerBtn || !nav) return;
+      
+      const navRect = nav.getBoundingClientRect();
+      const btnRect = installerBtn.getBoundingClientRect();
+      const menuRect = navMenu.getBoundingClientRect();
+      
+      // Calculate if there's enough space
+      const availableSpace = btnRect.left - navRect.left - 300; // 300px buffer
+      const requiredSpace = menuRect.width;
+      
+      if (availableSpace < requiredSpace) {
+        navMenu.classList.add('hidden');
+      } else {
+        navMenu.classList.remove('hidden');
+      }
+    }
+
+    // Run on load and resize
+    window.addEventListener('load', checkNavMenuVisibility);
+    window.addEventListener('resize', checkNavMenuVisibility);
   </script>
 
   <!-- Call to Action / Signup Form -->
