@@ -64,147 +64,6 @@
       opacity: 0;
       pointer-events: none;
     }
-
-    /* Form container styling */
-    .form-container {
-      box-shadow: 0 10px 25px rgba(99, 102, 241, 0.1);
-      backdrop-filter: blur(10px);
-      background-color: rgba(255, 255, 255, 0.95);
-      transition: all 0.3s ease;
-    }
-
-    .form-container:hover {
-      box-shadow: 0 15px 35px rgba(99, 102, 241, 0.2);
-      transform: translateY(-5px);
-    }
-
-    /* Animated input styling */
-    .animated-input {
-      position: relative;
-      margin-bottom: 1.5rem;
-    }
-
-    .animated-input input,
-    .animated-input textarea {
-      width: 100%;
-      padding: 0.5rem 1rem;
-      border: 2px solid #e5e7eb;
-      border-radius: 0.5rem;
-      background-color: #f9fafb;
-      transition: all 0.3s ease;
-      color: #1f2937;
-    }
-
-    .animated-input label {
-      position: absolute;
-      left: 1rem;
-      top: 0.5rem;
-      color: #6b7280;
-      pointer-events: none;
-      transition: all 0.3s ease;
-      background-color: transparent;
-      padding: 0 0.25rem;
-    }
-
-    .animated-input input:focus,
-    .animated-input textarea:focus,
-    .animated-input input:not(:placeholder-shown),
-    .animated-input textarea:not(:placeholder-shown) {
-      border-color: #6366f1;
-      padding-top: 0.75rem;
-      padding-bottom: 0.25rem;
-    }
-
-    .animated-input input:focus + label,
-    .animated-input textarea:focus + label,
-    .animated-input input:not(:placeholder-shown) + label,
-    .animated-input textarea:not(:placeholder-shown) + label {
-      top: -0.5rem;
-      left: 0.75rem;
-      font-size: 0.75rem;
-      color: #6366f1;
-      font-weight: 600;
-      background-color: white;
-    }
-
-    .animated-input input:focus,
-    .animated-input textarea:focus {
-      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
-      outline: none;
-    }
-
-    /* Button styling */
-    .form-submit-btn {
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s ease;
-    }
-
-    .form-submit-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
-    }
-
-    .form-submit-btn::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 5px;
-      height: 5px;
-      background: rgba(255, 255, 255, 0.5);
-      opacity: 0;
-      border-radius: 100%;
-      transform: scale(1, 1) translate(-50%);
-      transform-origin: 50% 50%;
-    }
-
-    .form-submit-btn:focus:not(:active)::after {
-      animation: ripple 1s ease-out;
-    }
-
-    @keyframes ripple {
-      0% {
-        transform: scale(0, 0);
-        opacity: 0.5;
-      }
-      100% {
-        transform: scale(20, 20);
-        opacity: 0;
-      }
-    }
-
-    /* Checkbox styling */
-    .form-checkbox {
-      position: relative;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .form-checkbox:checked {
-      background-color: #6366f1;
-      border-color: #6366f1;
-    }
-
-    /* Form success animation */
-    @keyframes successPulse {
-      0% { transform: scale(0.95); opacity: 0; }
-      70% { transform: scale(1.05); opacity: 1; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
-    .success-animation {
-      animation: successPulse 0.5s ease-out forwards;
-    }
-
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
-      70% { box-shadow: 0 0 0 10px rgba(99, 102, 241, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
-    }
-    .pulse-btn {
-      animation: pulse 2s infinite;
-    }
   </style>
 </head>
 <body class="bg-white text-gray-900 antialiased">
@@ -224,7 +83,7 @@
       <div class="max-w-7xl mx-auto px-4 py-6 flex items-center">
         <!-- Logo -->
         <div class="flex-shrink-0 mr-12 lg:mr-24">
-          <img src="./images/order-install-logo_white.png" alt="OrderInstall Logo" class="w-48 md:w-64 h-auto" />
+          <img src="./images/order-install-logo_white.png" alt="OrderInstall Logo" class="w-60 md:w-64 h-auto" />
         </div>
         <!-- Navigation Links -->
         <div id="nav-menu" class="nav-menu hidden md:flex items-center space-x-8 text-white mr-64 ml-auto">
@@ -238,7 +97,7 @@
     </nav>
     <div class="w-full min-h-screen flex items-center px-4 py-12">
       <div class="max-w-7xl mx-auto w-full">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-start pt-24 md:pt-0">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
           <!-- Left Column: Title and Description -->
           <div class="z-10 max-w-2xl">
             <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-8">
@@ -247,66 +106,11 @@
               <div class="fade-in delay-3">Gear shipped.</div>
               <div class="text-yellow-300 fade-in delay-4">JOB DONE!</div>
             </h1>
-
-            <!-- Login Form (Mobile Only) -->
-            <div class="block md:hidden mb-8">
-              <div class="form-container bg-white rounded-3xl shadow-2xl p-8 w-full max-w-md mx-auto slide-in-right">
-                <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Already have an account?</h2>
-                <form class="space-y-6">
-                  <div class="animated-input">
-                    <input 
-                      type="text" 
-                      id="login-username-mobile" 
-                      name="username"
-                      placeholder=" "
-                      class="w-full focus:outline-none" 
-                      required 
-                    />
-                    <label for="login-username-mobile">Username</label>
-                    <div class="absolute right-3 top-3 text-gray-400">
-                      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path d="M5.121 17.804A13.937 13.937 0 0 1 12 15c2.5 0 4.847.655 6.879 1.804M15 11a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
-                      </svg>
-                    </div>
-                  </div>
-                  
-                  <div class="animated-input">
-                    <input 
-                      type="password" 
-                      id="login-password-mobile" 
-                      name="password"
-                      placeholder=" "
-                      class="w-full focus:outline-none" 
-                      required 
-                    />
-                    <label for="login-password-mobile">Password</label>
-                    <div class="absolute right-3 top-3 text-gray-400">
-                      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path d="M12 17a5 5 0 0 0 5-5V9a5 5 0 0 0-10 0v3a5 5 0 0 0 5 5Z"/>
-                      </svg>
-                    </div>
-                  </div>
-                  
-                  <div class="flex items-center justify-between">
-                    <label class="flex items-center">
-                      <input type="checkbox" class="form-checkbox rounded text-indigo-600 mr-2 border-2 border-gray-300 focus:ring-indigo-500 focus:ring-offset-0" />
-                      <span class="text-sm text-gray-600">Remember Me?</span>
-                    </label>
-                    <a href="#" class="text-sm text-indigo-600 hover:text-indigo-800 font-medium">Forgot Password?</a>
-                  </div>
-                  
-                  <button type="submit" class="form-submit-btn w-full bg-indigo-600 text-white font-semibold py-3 rounded-lg hover:bg-indigo-700 transition shadow-lg hover:shadow-xl">
-                    Sign In
-                  </button>
-                </form>
-              </div>
-            </div>
-
             <p class="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed fade-in delay-3">
               OrderInstall is the all-in-one SaaS platform for managing field-based product and service orders—streamlining job creation, logistics, subcontractor scheduling, and automated billing.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 fade-in delay-4">
-              <button onclick="document.getElementById('signup').scrollIntoView({behavior: 'smooth'})" class="inline-flex justify-center items-center bg-white text-indigo-600 font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition text-lg pulse-btn">
+              <button onclick="document.getElementById('signup').scrollIntoView({behavior: 'smooth'})" class="inline-flex justify-center items-center bg-white text-indigo-600 font-semibold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition text-lg">
                 Access Our Demo
               </button>
               <button onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})" class="inline-flex justify-center items-center bg-transparent border-2 border-white text-white font-semibold px-8 py-4 rounded-full hover:bg-white hover:text-indigo-600 transition text-lg">
@@ -315,54 +119,55 @@
             </div>
           </div>
 
-          <!-- Right Column: Login Form (Desktop Only) -->
-          <div class="z-10 hidden md:block">
-            <div class="form-container bg-white rounded-3xl shadow-2xl p-8 md:p-10 w-full max-w-md mx-auto slide-in-right">
+          <!-- Right Column: Login Form -->
+          <div class="z-10">
+            <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-10 w-full max-w-md mx-auto slide-in-right">
               <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Already have an account?</h2>
               <form class="space-y-6">
-                <div class="animated-input">
-                  <input 
-                    type="text" 
-                    id="login-username" 
-                    name="username"
-                    placeholder=" "
-                    class="w-full focus:outline-none" 
-                    required 
-                  />
-                  <label for="login-username">Username</label>
-                  <div class="absolute right-3 top-3 text-gray-400">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                      <path d="M5.121 17.804A13.937 13.937 0 0 1 12 15c2.5 0 4.847.655 6.879 1.804M15 11a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
-                    </svg>
+                <div>
+                  <label for="login-username" class="block text-sm font-medium text-gray-700 mb-2">Username</label>
+                  <div class="relative">
+                    <input 
+                      type="text" 
+                      id="login-username" 
+                      name="username" 
+                      placeholder="Your Username" 
+                      class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" 
+                      required 
+                    />
+                    <span class="absolute inset-y-0 right-3 flex items-center text-gray-400">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M5.121 17.804A13.937 13.937 0 0 1 12 15c2.5 0 4.847.655 6.879 1.804M15 11a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+                      </svg>
+                    </span>
                   </div>
                 </div>
-                
-                <div class="animated-input">
-                  <input 
-                    type="password" 
-                    id="login-password" 
-                    name="password"
-                    placeholder=" "
-                    class="w-full focus:outline-none" 
-                    required 
-                  />
-                  <label for="login-password">Password</label>
-                  <div class="absolute right-3 top-3 text-gray-400">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                      <path d="M12 17a5 5 0 0 0 5-5V9a5 5 0 0 0-10 0v3a5 5 0 0 0 5 5Z"/>
-                    </svg>
+                <div>
+                  <label for="login-password" class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+                  <div class="relative">
+                    <input 
+                      type="password" 
+                      id="login-password" 
+                      name="password" 
+                      placeholder="Your Password" 
+                      class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent" 
+                      required 
+                    />
+                    <span class="absolute inset-y-0 right-3 flex items-center text-gray-400">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M12 17a5 5 0 0 0 5-5V9a5 5 0 0 0-10 0v3a5 5 0 0 0 5 5Z"/>
+                      </svg>
+                    </span>
                   </div>
                 </div>
-                
                 <div class="flex items-center justify-between">
                   <label class="flex items-center">
-                    <input type="checkbox" class="form-checkbox rounded text-indigo-600 mr-2 border-2 border-gray-300 focus:ring-indigo-500 focus:ring-offset-0" />
+                    <input type="checkbox" class="form-checkbox rounded text-indigo-600 mr-2" />
                     <span class="text-sm text-gray-600">Remember Me?</span>
                   </label>
                   <a href="#" class="text-sm text-indigo-600 hover:text-indigo-800 font-medium">Forgot Password?</a>
                 </div>
-                
-                <button type="submit" class="form-submit-btn w-full bg-indigo-600 text-white font-semibold py-3 rounded-lg hover:bg-indigo-700 transition shadow-lg hover:shadow-xl">
+                <button type="submit" class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-lg hover:bg-indigo-700 transition shadow-lg hover:shadow-xl">
                   Sign In
                 </button>
               </form>
@@ -753,19 +558,6 @@
     // Run on load and resize
     window.addEventListener('load', checkNavMenuVisibility);
     window.addEventListener('resize', checkNavMenuVisibility);
-
-    // Add form success function
-    function showFormSuccess() {
-      const successMessage = document.getElementById('form-success');
-      successMessage.classList.remove('hidden');
-      successMessage.classList.add('success-animation');
-      
-      // Hide the message after 5 seconds
-      setTimeout(() => {
-        successMessage.classList.add('hidden');
-        successMessage.classList.remove('success-animation');
-      }, 5000);
-    }
   </script>
 
   <!-- Call to Action / Signup Form -->
@@ -777,30 +569,30 @@
         <p class="text-xl opacity-90">Experience the power of OrderInstall firsthand. Get started with our demo today.</p>
       </div>
       <div class="max-w-xl mx-auto scroll-reveal">
-        <form class="form-container bg-white rounded-2xl shadow-2xl p-8 backdrop-blur-sm" name="lead-capture" autocomplete="on" onsubmit="event.preventDefault(); showFormSuccess(); this.reset();">
+        <form class="bg-white rounded-2xl shadow-2xl p-8 backdrop-blur-sm" name="lead-capture" autocomplete="on" onsubmit="event.preventDefault(); document.getElementById('form-success').classList.remove('hidden'); this.reset();">
           <div class="space-y-6">
-            <div class="animated-input">
-              <input type="text" id="name" name="name" required placeholder=" " class="w-full focus:outline-none" />
-              <label for="name">Name</label>
+            <div>
+              <label for="name" class="block font-medium mb-2 text-gray-700">Name</label>
+              <input type="text" id="name" name="name" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
             </div>
-            
-            <div class="animated-input">
-              <input type="email" id="email" name="email" required placeholder=" " class="w-full focus:outline-none" />
-              <label for="email">Email</label>
+            <div>
+              <label for="email" class="block font-medium mb-2 text-gray-700">Email</label>
+              <input type="email" id="email" name="email" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
             </div>
-            
-            <div class="animated-input">
-              <textarea id="message" name="message" rows="4" placeholder=" " class="w-full focus:outline-none"></textarea>
-              <label for="message">Message (optional)</label>
+            <div>
+              <label for="company" class="block font-medium mb-2 text-gray-700">Company</label>
+              <input type="text" id="company" name="company" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
             </div>
-            
-            <button type="submit" class="form-submit-btn w-full bg-indigo-600 text-white font-semibold py-4 rounded-lg hover:bg-indigo-700 transition shadow-lg hover:shadow-xl text-lg">
-              Get Access to Demo
-            </button>
-            
-            <div id="form-success" class="hidden text-green-600 text-center mt-4 font-medium">
-              Thank you! We'll be in touch soon.
+            <div>
+              <label for="role" class="block font-medium mb-2 text-gray-700">Role</label>
+              <input type="text" id="role" name="role" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
             </div>
+            <div>
+              <label for="message" class="block font-medium mb-2 text-gray-700">Message <span class="text-gray-400">(optional)</span></label>
+              <textarea id="message" name="message" rows="4" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-indigo-600 text-white font-semibold py-4 rounded-lg hover:bg-indigo-700 transition shadow-lg hover:shadow-xl text-lg">Get Access to Demo</button>
+            <div id="form-success" class="hidden text-green-600 text-center mt-4 font-medium">Thank you! We'll be in touch soon.</div>
           </div>
         </form>
       </div>
